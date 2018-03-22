@@ -2,7 +2,7 @@
 
 [![build status][travis-image]][travis-url]
 
-[travis-image]: https://img.shields.io/travis/Sunshine168/egg-mongolass.svg?style=flat-square
+[travis-image]: https://travis-ci.org/Sunshine168/ink-power-autocomplete.svg?branch=master
 
 ## feature
 
@@ -19,7 +19,17 @@ npm add ink-power-auto-complete -S // or yarn add ink-power-auto-complete
 ```
 import AutoComplete from "./dist/"; // power AutoComplete 
 import Select from "./dist/custom-select"; // power Select
+
+
+	<AutoComplete
+		value={searching}
+		items={list}
+		onChange={this.handleChange}
+		onSubmit={this.handleSubmit}
+		pageLimit={10} // only different opts currently
 ```
+
+
  
  
 ## base 

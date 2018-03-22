@@ -1,0 +1,49 @@
+{
+ "name": "ink-power-auto-complete",
+ "version": "1.0.0",
+ "description": "",
+ "main": "dist/index.js",
+ "scripts": {
+  "build": "babel --out-dir dist src",
+  "test:ava": "ava",
+  "test": "npm run build && ava",
+  "prepublishOnly": "yarn run test && yarn run build"
+ },
+ "author": "",
+ "license": "MIT",
+ "dependencies": {
+  "figures": "^2.0.0",
+  "ink": "^0.4.1",
+  "ink-text-input": "^1.1.1",
+  "prop-types": "^15.6.0"
+ },
+ "devDependencies": {
+  "ava": "^0.25.0",
+  "babel-cli": "^6.26.0",
+  "babel-plugin-transform-class-properties": "^6.24.1",
+  "babel-plugin-transform-export-extensions": "^6.22.0",
+  "babel-plugin-transform-object-rest-spread": "^6.26.0",
+  "babel-plugin-transform-react-jsx": "^6.24.1",
+  "babel-preset-env": "^1.6.1",
+  "xo": "^0.20.3"
+ },
+ "engines": {
+  "node": ">=6"
+ },
+ "ava": {
+  "babel": {
+   "presets": [
+    "@ava/stage-4"
+   ],
+   "plugins": [
+    [
+     "transform-react-jsx",
+     {
+      "pragma": "h",
+      "useBuiltIns": true
+     }
+    ]
+   ]
+  }
+ }
+}

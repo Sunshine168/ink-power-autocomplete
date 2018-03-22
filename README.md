@@ -1,4 +1,6 @@
-#ink-power-auto-complete
+# ink-power-auto-complete
+
+PS: if you dont need paging you should use [ink-autocomplete](https://github.com/maticzav/ink-autocomplete) priority, before this lib added more feature. 
 
 [![build status][travis-image]][travis-url]
 
@@ -17,8 +19,8 @@ npm add ink-power-auto-complete -S // or yarn add ink-power-auto-complete
 ```
 
 ```
-import AutoComplete from "./dist/"; // power AutoComplete 
-import Select from "./dist/custom-select"; // power Select
+import AutoComplete from "ink-power-auto-complete"; // power AutoComplete 
+import Select from "ink-power-auto-complete/dist/custom-select"; // power Select
 
 
 	<AutoComplete
@@ -27,6 +29,7 @@ import Select from "./dist/custom-select"; // power Select
 		onChange={this.handleChange}
 		onSubmit={this.handleSubmit}
 		pageLimit={10} // only different opts currently
+	/>
 ```
 
 

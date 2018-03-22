@@ -4,7 +4,7 @@ import figures from "figures";
 
 const noop = () => {};
 
-const Indicator = ({ isSelected }) => {
+export const Indicator = ({ isSelected }) => {
   if (!isSelected) {
     return " ";
   }
@@ -16,7 +16,7 @@ Indicator.propTypes = {
   isSelected: PropTypes.bool.isRequired
 };
 
-const Item = ({ isSelected, label }) => <Text blue={isSelected}>{label}</Text>;
+export const Item = ({ isSelected, label }) => <Text blue={isSelected}>{label}</Text>;
 
 Item.propTypes = {
   isSelected: PropTypes.bool.isRequired,

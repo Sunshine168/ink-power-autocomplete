@@ -2,7 +2,8 @@
 
 PS: if you dont need paging you should use [ink-autocomplete](https://github.com/maticzav/ink-autocomplete) priority, before this lib added more feature. 
 
-[![build status][travis-image]][travis-url]
+![build status][travis-image]
+
 
 [travis-image]: https://travis-ci.org/Sunshine168/ink-power-autocomplete.svg?branch=master
 
@@ -15,7 +16,7 @@ PS: if you dont need paging you should use [ink-autocomplete](https://github.com
 ## usage 
 
 ```js
-npm add ink-power-auto-complete -S // or yarn add ink-power-auto-complete
+npm install ink-power-auto-complete -S // or yarn add ink-power-auto-complete
 ```
 
 ```

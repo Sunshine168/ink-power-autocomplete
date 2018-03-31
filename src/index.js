@@ -2,14 +2,17 @@ import { h } from "ink";
 import Select from "./custom-select";
 import TextInput from "ink-text-input";
 import PropTypes from "prop-types";
+import fuzzysort from "fuzzysort";
 
 // Helpers -------------------------------------------------------------------
 const not = a => !a;
 const isEmpty = arr => arr.length === 0;
-const getMatch = input => ({ label }) =>
-  !input ||
-  (input.length > 0 && label.toLowerCase().indexOf(input.toLowerCase()) > -1);
 const noop = () => {};
+
+const getMatchItems = (value, items, fuzzysort) =>
+  fuzzysort.go(value, items, {
+    key: "label"
+  });
 
 // AutoComplete --------------------------------------------------------------
 
@@ -22,9 +25,20 @@ const AutoComplete = ({
   onSubmit,
   indicatorComponent,
   itemComponent,
-  pageLimit
+  pageLimit,
+  showListDefault
 }) => {
-  const matches = items.filter(getMatch(value));
+  let matches = showListDefault ? items : [];
+  if (value !== "") {
+    matches = getMatchItems(value, items, fuzzysort);
+  }
+
+  if (typeof getMatch === "function") {
+    matches = matches
+      .map(item => (item.obj ? item.obj : item))
+      .filter(getMatch(value));
+  }
+
   const hasSuggestion = not(isEmpty(matches));
 
   return (
@@ -59,18 +73,21 @@ AutoComplete.propTypes = {
       value: PropTypes.any.isRequired
     })
   ),
+  getMatchItems:PropTypes.func,
   getMatch: PropTypes.func,
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
   indicatorComponent: PropTypes.func,
-  itemComponent: PropTypes.func
+  itemComponent: PropTypes.func,
+  showListDefault: PropTypes.bool
 };
 
 AutoComplete.defaultProps = {
+  showListDefault: false,
   value: "",
   placeholder: "",
   items: [],
-  getMatch,
+  getMatchItems,
   onChange: noop,
   onSubmit: noop,
   indicatorComponent: Select.defaultProps.indicatorComponent,

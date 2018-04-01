@@ -45,7 +45,7 @@ const AutoComplete = ({
     <span>
       <div>
         <TextInput
-          value={value ? value : ""}
+          value={value}
           placeholder={placeholder}
           onChange={onChange}
         />

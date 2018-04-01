@@ -19,18 +19,6 @@ test("Renders correctly.", t => {
   );
 });
 
-test("value set null will be ok .", t => {
-  t.is(
-    renderToString(<AutoComplete items={[]} value={null} />),
-    renderToString(
-      <span>
-        <div>
-          <Input value={""} placeholder={""} />
-        </div>
-      </span>
-    )
-  );
-});
 
 test("paging render should be ok.", t => {
   const mockData = [];

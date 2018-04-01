@@ -13,6 +13,7 @@
  "license": "MIT",
  "dependencies": {
   "figures": "^2.0.0",
+  "fuzzysort": "^1.1.1",
   "ink": "^0.4.1",
   "ink-text-input": "^1.1.1",
   "lodash.isequal": "^4.5.0",

@@ -1,7 +1,8 @@
 # ink-power-auto-complete
-
-PS: if you dont need paging you should use [ink-autocomplete](https://github.com/maticzav/ink-autocomplete) priority, before this lib added more feature. 
-
+ 
+ 
+**PS: ink-autocomplete and ink-select-input still your first choose**
+  
 ![build status][travis-image]
 
 
@@ -12,6 +13,9 @@ PS: if you dont need paging you should use [ink-autocomplete](https://github.com
 * same as [ink-autocomplete](https://github.com/maticzav/ink-autocomplete) extra support paging(power ink-selected-input at same time)
 
 * WIP make it flexible
+
+* use [fuzzysort](https://github.com/farzher/fuzzysort) for searching 
+
 
 ## usage 
 
@@ -29,9 +33,32 @@ import Select from "ink-power-auto-complete/dist/custom-select"; // power Select
 		items={list}
 		onChange={this.handleChange}
 		onSubmit={this.handleSubmit}
-		pageLimit={10} // only different opts currently
+		pageLimit={10}
 	/>
 ```
+
+### options
+
+#### pageLimit 
+
+paging size
+
+#### getMatchItems
+
+default:
+
+```js
+const getMatchItems = (value, items, fuzzysort) =>
+  fuzzysort.go(value, items, {
+    key: "label"
+  });
+```
+
+#### showListDefalut
+
+true or false
+
+show all the result before input
 
 
  

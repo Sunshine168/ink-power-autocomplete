@@ -3,7 +3,7 @@ import test from "ava";
 import { h, renderToString, Text } from "ink";
 import Input from "ink-text-input";
 import AutoComplete from "./dist/";
-import Select, { Indicator, Item } from "./dist/custom-select";
+import Select, { Indicator, Item } from "ink-select-input";
 import figures from "figures";
 
 test("Renders correctly.", t => {
@@ -30,7 +30,7 @@ test("paging render should be ok.", t => {
     });
   }
   t.is(
-    renderToString(<Select items={mockData} pageLimit={2} />),
+    renderToString(<Select items={mockData} limit={2} />),
     renderToString(
       <span>
         <div>

@@ -1,5 +1,5 @@
 import { h } from "ink";
-import Select from "./custom-select";
+import Select from "ink-select-input";
 import TextInput from "ink-text-input";
 import PropTypes from "prop-types";
 import fuzzysort from "fuzzysort";
@@ -57,7 +57,7 @@ const AutoComplete = ({
           focus={hasSuggestion}
           indicatorComponent={indicatorComponent}
           itemComponent={itemComponent}
-          pageLimit={pageLimit}
+          limit={pageLimit}
         />
       )}
     </span>

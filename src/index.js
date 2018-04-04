@@ -73,7 +73,7 @@ AutoComplete.propTypes = {
       value: PropTypes.any.isRequired
     })
   ),
-  getMatchItems:PropTypes.func,
+  getMatchItems: PropTypes.func,
   getMatch: PropTypes.func,
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
@@ -95,3 +95,4 @@ AutoComplete.defaultProps = {
 };
 
 export default AutoComplete;
+module.exports = exports = AutoComplete;
